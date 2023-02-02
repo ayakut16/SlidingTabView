@@ -42,6 +42,12 @@ struct SlidingTabView_Previews : PreviewProvider {
     }
 }
 ```
+# Forked from [QuynhNguyen/SlidingTabView](https://github.com/QuynhNguyen/SlidingTabView)
+
+This repository is a fork of [QuynhNguyen/SlidingTabView](https://github.com/QuynhNguyen/SlidingTabView), which was previously abandoned. 
+I have taken over development and maintenance of this project to continue its development after attempting to reach out to the original author, but was unable to do so.
+
+All credit for the original work goes to [QuynhNguyen](https://github.com/QuynhNguyen). I am grateful for their contributions and for making the source code available for others to use and build upon. 
 
 ## Suggestions or feedback?
 Feel free to create a pull request!
