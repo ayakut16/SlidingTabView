@@ -157,7 +157,6 @@ public struct SlidingTabView<Content:View>: View{
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                .background(Color.black)
             }
         }
     }
