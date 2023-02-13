@@ -146,8 +146,6 @@ public struct SlidingTabView<Content:View>: View{
     }
     
     public var body: some View {
-        assert(tabs.count > 1, "Must have at least 2 tabs")
-        
         return VStack(alignment: .leading) {
             tabsView
             Extract(content) { views in
