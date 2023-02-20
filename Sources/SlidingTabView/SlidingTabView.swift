@@ -118,7 +118,7 @@ public struct SlidingTabView<Content:View>: View{
                             Spacer()
                         }
                     }
-                    .frame(height: 52)
+                    .frame(height: 44)
                     .accentColor(
                         self.isSelected(tabIdentifier: tab)
                         ? self.activeAccentColor
@@ -132,13 +132,14 @@ public struct SlidingTabView<Content:View>: View{
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
                     Rectangle()
+                        .fill(self.selectionBarBackgroundColor)
+                        .frame(width: geometry.size.width, height: self.selectionBarBackgroundHeight, alignment: .leading)
+                    Rectangle()
                         .fill(self.selectionBarColor)
                         .frame(width: self.tabWidth(from: geometry.size.width), height: self.selectionBarHeight, alignment: .leading)
                         .offset(x: self.selectionBarXOffset(from: geometry.size.width), y: 0)
+                        .padding(.vertical, 8)
                     
-                    Rectangle()
-                        .fill(self.selectionBarBackgroundColor)
-                        .frame(width: geometry.size.width, height: self.selectionBarBackgroundHeight, alignment: .leading)
                 }.fixedSize(horizontal: false, vertical: true)
             }.fixedSize(horizontal: false, vertical: true)
             
@@ -146,7 +147,7 @@ public struct SlidingTabView<Content:View>: View{
     }
     
     public var body: some View {
-        return VStack(alignment: .leading) {
+        return VStack(alignment: .leading, spacing: 0) {
             tabsView
             Extract(content) { views in
                 TabView(selection: $selection.animation(self.animation)) {
