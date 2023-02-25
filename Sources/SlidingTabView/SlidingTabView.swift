@@ -114,15 +114,15 @@ public struct SlidingTabView<Content:View>: View{
                     } label: {
                         HStack {
                             Spacer()
-                            Text(tab).font(self.font)
+                            Text(tab)
+                                .font(self.font)
+                                .foregroundColor(
+                                    self.isSelected(tabIdentifier: tab)
+                                    ? self.activeAccentColor : self.inactiveAccentColor)
                             Spacer()
                         }
                     }
                     .frame(height: 44)
-                    .accentColor(
-                        self.isSelected(tabIdentifier: tab)
-                        ? self.activeAccentColor
-                        : self.inactiveAccentColor)
                     .background(
                         self.isSelected(tabIdentifier: tab)
                         ? self.activeTabColor
